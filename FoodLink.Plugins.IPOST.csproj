@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74671EB8-DB57-4D69-A4DC-9B467F5B99CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoodLink.Plugins.IPOST</RootNamespace>
+    <AssemblyName>FoodLink.Plugins.IPOST</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Request\booking_info.cs" />
+    <Compile Include="Domain\Request\manager_login_request.cs" />
+    <Compile Include="Domain\Request\ipost_parameters.cs" />
+    <Compile Include="Domain\Request\booking_online_request.cs" />
+    <Compile Include="Domain\Request\order_online.cs" />
+    <Compile Include="Domain\Request\order_online_request.cs" />
+    <Compile Include="Domain\Response\error_code_ipost.cs" />
+    <Compile Include="Domain\Response\error_response.cs" />
+    <Compile Include="Domain\Response\ipost_base_response.cs" />
+    <Compile Include="Domain\Response\booking_online_response.cs" />
+    <Compile Include="Domain\Response\ipost_item_type.cs" />
+    <Compile Include="Domain\Response\ipost_pos.cs" />
+    <Compile Include="Domain\Response\ipost_item.cs" />
+    <Compile Include="Domain\Response\order_online_response.cs" />
+    <Compile Include="Domain\Response\pos_data_response.cs" />
+    <Compile Include="Domain\Response\partner_login_response.cs" />
+    <Compile Include="Domain\Response\manager_login_response.cs" />
+    <Compile Include="IPOST_SDK.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoodLink.Core\FoodLink.Core.csproj">
+      <Project>{83d240b5-bf92-4f1f-97f4-08bd4ee34a44}</Project>
+      <Name>FoodLink.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoodLink.Data\FoodLink.Data.csproj">
+      <Project>{a9177e8e-8469-4750-8000-99df35bd3827}</Project>
+      <Name>FoodLink.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
